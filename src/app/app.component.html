@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="overlay">
+        <h1>Photo Search App</h1>
+        <h1>Angular 10</h1>
+
+        <br />
+        <br />
+      </div>
+    </header>
+    <div class="form-wrapper cf">
+      <input
+        type="text"
+        placeholder="Enter Image name here..."
+        required
+        [(ngModel)]="search"
+      />
+      <input
+        type="number"
+        name=""
+        id=""
+        [(ngModel)]="perPage"
+        placeholder="Enter number of item"
+      />
+      <button (click)="searchPhotos()">Search</button>
+    </div>
+    <div class="byline">
+      <p>
+        search box by
+        <a>Me</a>
+        featured on
+        <a>MERN/MEAN STACK DEVELOPER</a>
+      </p>
+    </div>
+    <br />
+    <br />
+    <div class="space"></div>
+
+    <div class="container" *ngFor="let d of data">
+      <div class="cards">
+        <img
+          style="width: 580px; height: 300px"
+          src="{{ d.src.medium }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
